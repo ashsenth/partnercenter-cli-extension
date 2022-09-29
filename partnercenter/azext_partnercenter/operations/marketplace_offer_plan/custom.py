@@ -3,34 +3,29 @@
 # Licensed under the MIT License. See License.txt in the project root for license information.
 # --------------------------------------------------------------------------------------------
 
-import os
-import os.path
-import re
-import subprocess
-import time
-#import docker
 from azure.cli.core.util import sdk_no_wait
 from knack.util import CLIError
 
-
 # API Operations
 # pylint: disable=too-many-locals
-def create_offer(cmd, arg):
+
+def list_plan(cmd, client):
+    results = client.list()
+    return results
+
+
+def create_plan(cmd, arg):
     raise CLIError('TODO: Implement `partnercenter marketplace offer create`')
 
 
-def update_offer(cmd, instance, arg):
+def update_plan(cmd, instance, arg):
     # TODO: Implement partnercenter marketplace offer update
     return instance
 
-def delete_offer(cmd):
-    raise CLIError('TODO: Implement `partnercenter marketplace offer delete`')
 
-def get_offer(cmd):
-    raise CLIError('TODO: Implement `partnercenter marketplace offer show`')
+def delete_plan(cmd):
+    raise CLIError('TODO: Implement `partnercenter marketplace offer plan delete`')
 
 
-def list_offer(cmd, client, product_id, instance_id):
-    results = client.list(product_id, instance_id)
-    return results
-
+def get_plan(cmd):
+    raise CLIError('TODO: Implement `partnercenter marketplace offer plan show`')
